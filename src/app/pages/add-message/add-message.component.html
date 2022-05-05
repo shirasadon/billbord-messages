@@ -1,0 +1,11 @@
+<app-messages-container></app-messages-container>
+<div>
+    <h4>Add new message</h4>
+    <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)">
+<input [(ngModel)]="message.message" #name=ngModel  type="text"placeholder="message:">
+<input [(ngModel)]="message.date"  #name=ngModel type="date">
+<label for="">isseen:</label>
+<input type="checkbox"[(ngModel)]="message.IsSeen" #name=ngModel >
+    </form>
+</div>
+<button type="submit" [disabled]="!messageForm.valid" [disabled]="messageForm.invalid" >add message</button>

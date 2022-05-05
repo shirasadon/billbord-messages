@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bilboard-messages": {
+      "hosting": {
+        "bilbord": [
+          "bilboard-messages"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bilboard-messages"
+  }
+}
