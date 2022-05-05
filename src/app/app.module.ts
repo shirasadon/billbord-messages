@@ -10,13 +10,14 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AddMessageComponent } from './pages/add-message/add-message.component';
 import { UpdateMessageComponent } from './pages/update-message/update-message.component';
 import { MessageComponent } from './components/message/message.component';
-import { NgModel } from '@angular/forms';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessagesContainerComponent } from './components/messages-container/messages-container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule } from '@angular/forms';
+import { MessagesPageComponent } from './pages/messages-page/messages-page.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,12 @@ import { FormsModule } from '@angular/forms';
     AddMessageComponent,
     UpdateMessageComponent,
     MessageComponent,
-    MessagesContainerComponent
+    MessagesContainerComponent,
+    MessagesPageComponent
   ],
   imports: [
     
       AngularFireModule.initializeApp(environment.firebase),
-      NgModel,
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),

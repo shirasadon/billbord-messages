@@ -26,7 +26,12 @@ export class MessegService {
 constructor(private firestore: Firestore) { }
 
 addMessege(messege:Message) {
-  const messegeRef = collection(this.firestore, 'messeges'); 
+  const messegeRef = collection(this.firestore, 'bilboard-messages'); 
   return addDoc(messegeRef, messege);
+}
+
+getMessages(): Observable<any[]> {
+  const messegeRef = collection(this.firestore, 'bilboard-messages');
+  return collectionData(messegeRef,{ idField: 'id' }) as Observable<any[]>;
 }
 }
