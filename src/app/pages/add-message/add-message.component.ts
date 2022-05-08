@@ -2,13 +2,16 @@ import { MessegService } from 'src/app/services/messeg.service';
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'src/app/classes/message';
 import { Observable } from 'rxjs';
-import { NgForm } from '@angular/forms';
+import { Form, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-message',
   templateUrl: './add-message.component.html',
   styleUrls: ['./add-message.component.scss']
 })
 export class AddMessageComponent  {
+  updateStatus=false;
+  messageToEdit=Message
+
 message:Message= {
  message:"",
    date:new Date(),
@@ -36,5 +39,13 @@ constructor(private MessegService:MessegService){}
  onSubmit(form: NgForm) {
   this.MessegService.addMessege(form.value).
     then(() => form.reset());
+}
+editMode(message:any,value:NgForm){
+  this.updateStatus=!this.updateStatus
+  
+}
+updateUser(userKey, value){
+  value.nameToSearch = value.name.toLowerCase();
+  return this.db.collection('users').doc(userKey).set(value);
 }
 }

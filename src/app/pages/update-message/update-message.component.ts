@@ -10,8 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UpdateMessageComponent implements OnInit {
 message:Message=new Message()
+
+
   constructor(  private messegService: MessegService,
-    private route: ActivatedRoute) { 
+    private route: ActivatedRoute) {
+     
   
   }
   ngOnInit(): void {

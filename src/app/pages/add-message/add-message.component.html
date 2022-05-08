@@ -7,7 +7,7 @@
 <label for="">isseen:</label>
 <input type="checkbox"[(ngModel)]="message.IsSeen" #name=ngModel name="IsSeen">
  
-
+<button *ngIf="!updateStatus" type="submit" (click)="editMode">edit</button>
 <button type="submit" [disabled]="!messageForm.valid" [disabled]="messageForm.invalid" >add message</button>
 </form>
 </div>
