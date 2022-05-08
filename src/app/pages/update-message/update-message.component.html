@@ -1,1 +1,16 @@
-<p>update-message works!</p>
+<!-- <input type="text" placeholder="">
+<input type="date" placeholder="">
+<input type="checkbox" placeholder=""> -->
+
+<div class="container">
+    <form action="action_page.php">
+        <label for="fname">message</label>
+        <input [(ngModel)]="message.message" type="text"  name="message" placeholder="edit message">
+        <label for="lname">date</label>
+        <input [(ngModel)]="message.date" type="date"  name="date" >
+        <label for="lname">isSeen?</label>
+        <input [(ngModel)]="message.IsSeen" type="isseen"  name="isseen" >
+        <a [routerLink]="['']">חזרה</a>
+       
+    </form>
+</div>

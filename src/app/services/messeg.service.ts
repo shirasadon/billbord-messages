@@ -13,16 +13,7 @@ import {
   providedIn: 'root'
 })
 export class MessegService {
-// messege$:Observable<any>
-// constructor(firestore: Firestore) {
-//   const collectio = collection(firestore, 'messeges');
-//   debugger;
-//   this.messege$ = collectionData(collectio);
-// }
-//  constructor(private http: HttpClient){}
-// create(data:any): Observable<any> {
-//   return this.http.post(baseUrl, data);
-// }
+  // private message: Message[]=new Message()
 constructor(private firestore: Firestore) { }
 
 addMessege(messege:Message) {
@@ -34,4 +25,11 @@ getMessages(): Observable<any[]> {
   const messegeRef = collection(this.firestore, 'bilboard-messages');
   return collectionData(messegeRef,{ idField: 'id' }) as Observable<any[]>;
 }
+
+// getMessagesBy(id: string): Message | undefined {
+//   return this.message.find((message) => message.id === id);
+// }
+// updateMessage(_id:any, message:string, date:Date) {
+//   this.db.doc(`User/${_id}`).update({message:message,date:date});
+//  }
 }

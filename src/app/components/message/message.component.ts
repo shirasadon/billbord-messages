@@ -9,7 +9,7 @@ import { Message } from 'src/app/classes/message';
 export class MessageComponent implements OnInit {
 
   constructor() { }
- @Input()message?:Message
+ @Input()message:Message=new Message()
   ngOnInit(): void {
   }
 

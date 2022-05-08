@@ -1,3 +1,8 @@
-<p>{{message?.message}}</p>
+<div>
+    <p>{{message?.message}}</p>
 <p>{{message?.date}}</p>
 <p>{{message?.IsSeen}}</p>
+
+<a [routerLink]="['update-contact', message.id]">edit</a>
+</div>
+

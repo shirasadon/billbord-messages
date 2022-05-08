@@ -1,3 +1,4 @@
+import { UpdateMessageComponent } from './../../pages/update-message/update-message.component';
 import { Component, OnInit,
   Input } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -18,6 +19,7 @@ export class MessagesContainerComponent  {
     debugger;
     this.messages$ = collectionData(collectio);
   }
+ 
 }
 
 
